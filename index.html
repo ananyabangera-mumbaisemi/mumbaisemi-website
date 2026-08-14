@@ -321,7 +321,7 @@
     color:#fff;
     border-radius:var(--radius-lg);
     display:grid;
-    grid-template-columns: 1fr 1fr; /* Equal 50/50 balance for text and image */
+    grid-template-columns: 0.9fr 1.1fr; 
     position:relative;
     overflow:hidden;
     border:1px solid rgba(255,255,255,0.06);
@@ -350,11 +350,11 @@
   .spotlight-image{
     position:relative;
     overflow:hidden;
-    min-height:480px;
+    min-height:500px;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:20px;
+    padding:0; 
   }
 
   @media (max-width:900px){
@@ -695,12 +695,12 @@
   /* Slide 2: PCB Board Image (Enlarged) */
   .dhruva-slide.slide-pcb img{
     width:100%;
-    max-width:440px;
+    max-width:520px; /* Increased from 440px */
     height:auto;
-    max-height:440px;
+    max-height:500px; /* Increased from 440px */
     object-fit:contain;
-    filter:drop-shadow(0 10px 30px rgba(0,0,0,0.5));
-    transform:scale(1.08); /* Subtle zoom that fills the right side without distorting layout */
+    filter:drop-shadow(0 12px 35px rgba(0,0,0,0.6));
+    transform:scale(1.2); /* Zooms up the PCB board cleanly */
   }
 
   .dhruva-slide-dots{
