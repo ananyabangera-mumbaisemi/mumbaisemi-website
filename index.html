@@ -154,7 +154,7 @@
   }
   .hero-product img{
     width: 100%;
-    max-width: 540px; /* Forces wider display */
+    max-width: 400px; /* Forces wider display */
     height: auto;
     object-fit: contain;
     background: transparent;
@@ -163,12 +163,12 @@
     box-shadow: none;
     border: none;
     filter: drop-shadow(0 20px 40px rgba(0,0,0,0.75));
-    transform: scale(1.25); /* Zooms up the chip image by 25% */
+    transform: none; 
     transform-origin: center center;
     transition: transform 0.3s ease;
   }
   .hero-product img:hover{
-    transform: scale(1.28); /* Subtle zoom effect on hover */
+    transform: scale(1.03); 
   }
   .hero-product-tag{
     position:absolute;
@@ -322,12 +322,13 @@
     color: #fff;
     border-radius: var(--radius-lg);
     display: grid;
-    grid-template-columns: 450px 1fr; /* Text side stays locked at 450px */
-    align-items: center;
+    grid-template-columns: 450px 1fr; /* Locks text at 450px, right column gets rest */
+    align-items: center; /* Vertically centers content on both sides */
+    justify-items: center;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.06);
-    min-height: 820px; /* <--- Forces vertical room for the PCB board to grow */
+    min-height: 560px;
   }
   .spotlight-content{
     padding:40px 32px;
@@ -355,11 +356,10 @@
     overflow: hidden;
     width: 100%;
     height: 100%;
-    min-height: 620px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
+    align-items: center; /* Vertically centers slide */
+    justify-content: center; /* Horizontally centers slide */
+    padding: 20px;
   }
 
   @media (max-width:900px){
@@ -700,13 +700,14 @@
   /* Slide 2: PCB Board Image (Significantly Enlarged) */
   .dhruva-slide.slide-pcb img{
     width: 100%;
-    max-width: 920px; /* Unlocks wider space */
+    max-width: 580px;
     height: auto;
-    max-height: 780px; /* Unlocks taller space */
+    max-height: 480px;
     object-fit: contain;
-    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.6));
-    transform: scale(1.55); /* <--- Zooms the PCB board up to 135% size */
-    transform-origin: center center;
+    margin: auto; /* Guarantees true flex centering */
+    filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.6));
+    transform: scale(1.1); /* Subtle clean scale */
+    transform-origin: center center; /* Scales evenly from center point */
   }
 
   .dhruva-slide-dots{
