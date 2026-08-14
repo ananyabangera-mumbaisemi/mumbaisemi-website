@@ -317,15 +317,19 @@
 
   /* ===== Product spotlight ===== */
   .spotlight{
-    background:var(--navy);color:#fff;
+    background:var(--navy);
+    color:#fff;
     border-radius:var(--radius-lg);
     display:grid;
-    grid-template-columns: 0.55fr 1.45fr; /* Gave more width to the image side */
-    position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.06);
+    grid-template-columns: 1fr 1fr; /* Equal 50/50 balance for text and image */
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.06);
   }
   .spotlight-content{
-    padding:48px 36px;
-    position:relative;z-index:1;
+    padding:48px 40px;
+    position:relative;
+    z-index:1;
   }
   .spotlight-content::after{
     content:"";position:absolute;bottom:-60px;left:-60px;width:220px;height:220px;
@@ -346,11 +350,11 @@
   .spotlight-image{
     position:relative;
     overflow:hidden;
-    min-height:720px;
+    min-height:480px;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:10px;
+    padding:20px;
   }
 
   @media (max-width:900px){
@@ -691,12 +695,12 @@
   /* Slide 2: PCB Board Image (Enlarged) */
   .dhruva-slide.slide-pcb img{
     width:100%;
-    max-width:1080px;
+    max-width:440px;
     height:auto;
-    max-height:850px;
+    max-height:440px;
     object-fit:contain;
     filter:drop-shadow(0 10px 30px rgba(0,0,0,0.5));
-    transform:scale(1.25);
+    transform:scale(1.08); /* Subtle zoom that fills the right side without distorting layout */
   }
 
   .dhruva-slide-dots{
