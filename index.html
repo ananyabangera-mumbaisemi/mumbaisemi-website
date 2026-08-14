@@ -321,13 +321,13 @@
     color:#fff;
     border-radius:var(--radius-lg);
     display:grid;
-    grid-template-columns: 0.85fr 1.15fr; 
+    grid-template-columns: 0.85fr 1.15fr; /* Increased image column width */
     position:relative;
     overflow:hidden;
     border:1px solid rgba(255,255,255,0.06);
   }
   .spotlight-content{
-    padding:48px 40px;
+    padding:40px 32px;
     position:relative;
     z-index:1;
   }
@@ -350,7 +350,7 @@
   .spotlight-image{
     position:relative;
     overflow:hidden;
-    min-height:580px;
+    min-height:580px; /* Increased height to give room for larger PCB */
     display:flex;
     align-items:center;
     justify-content:center;
@@ -677,11 +677,11 @@
   }
   .dhruva-slide.active{display:flex;}
   
-  /* Slide 1: Chip Image (No Border / Glow) */
+  /* Slide 1: Chip Image */
   .dhruva-slide.slide-chip img{
-    max-width:780px;
-    max-height:780px;
-    width:auto;
+    max-width:420px;
+    max-height:420px;
+    width:100%;
     height:auto;
     object-fit:contain;
     background:transparent;
@@ -692,15 +692,15 @@
     filter:drop-shadow(0 15px 35px rgba(0,0,0,0.6));
   }
 
-  /* Slide 2: PCB Board Image (Enlarged) */
+  /* Slide 2: PCB Board Image (Significantly Enlarged) */
   .dhruva-slide.slide-pcb img{
     width:100%;
-    max-width:680px; 
+    max-width:680px; /* Increased from 520px */
     height:auto;
-    max-height:580px; 
+    max-height:580px; /* Increased from 500px */
     object-fit:contain;
     filter:drop-shadow(0 12px 35px rgba(0,0,0,0.6));
-    transform:scale(1.1); 
+    transform:scale(1.1); /* Subtle clean zoom */
   }
 
   .dhruva-slide-dots{
@@ -849,7 +849,7 @@
       <div class="hero-product">
         <img src="assets/images/chip.png" alt="DhruvaPro Chip Die">
         <div class="hero-product-tag">
-          <div class="pt-name">DhruvaPro</div>
+          <div class="pt-name">DhruvaPro · Heval</div>
           <div class="pt-sub">Chip-verified · Multi-GNSS RFIC</div>
         </div>
       </div>
@@ -1251,7 +1251,7 @@
             <span>Make in India</span>
           </div>
           <div class="eco-tile">
-            <div class="eco-img-wrap"><img src="assets/images/chipin.jpg" alt="ChipIN"></div> 
+            <div class="eco-img-wrap"><img src="assets/images/chip.png" alt="ChipIN"></div> 
             <span>ChipIN</span>
           </div>
           <div class="eco-tile">
@@ -1273,7 +1273,7 @@
             <span>Make in India</span>
           </div>
           <div class="eco-tile">
-            <div class="eco-img-wrap"><img src="assets/images/chipin.jpg" alt="ChipIN"></div> 
+            <div class="eco-img-wrap"><img src="assets/images/chip.png" alt="ChipIN"></div> 
             <span>ChipIN</span>
           </div>
           <div class="eco-tile">
@@ -1295,7 +1295,7 @@
             <span>Make in India</span>
           </div>
           <div class="eco-tile">
-            <div class="eco-img-wrap"><img src="assets/images/chipin.jpg" alt="ChipIN"></div> 
+            <div class="eco-img-wrap"><img src="assets/images/chip.png" alt="ChipIN"></div> 
             <span>ChipIN</span>
           </div>
           <div class="eco-tile">
