@@ -144,25 +144,26 @@
   }
   .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
 
-  /* Hero Chip Product Image Styling */
+  /* Hero Chip Product Image Styling (No Border, No White Box) */
   .hero-product{
     position:relative;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding-bottom: 20px;
+    padding-bottom:20px;
   }
   .hero-product img{
-    max-width:360px;
-    max-height:360px;
+    max-width:420px;
+    max-height:420px;
     width:auto;
     height:auto;
     object-fit:contain;
-    background:#ffffff;
-    padding:24px;
-    border-radius:5px;
-    box-shadow:0 16px 40px rgba(0,0,0,0.5), 0 0 30px rgba(96,165,250,0.35);
+    background:transparent;
+    padding:0;
+    border-radius:0;
+    box-shadow:none;
     border:none;
+    filter:drop-shadow(0 15px 35px rgba(0,0,0,0.6));
     transition:transform 0.3s ease;
   }
   .hero-product img:hover{
@@ -318,11 +319,12 @@
   .spotlight{
     background:var(--navy);color:#fff;
     border-radius:var(--radius-lg);
-    display:grid;grid-template-columns:1fr 1fr;
+    display:grid;
+    grid-template-columns: 0.85fr 1.25fr; /* Gave more width to the image side */
     position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.06);
   }
   .spotlight-content{
-    padding:56px;
+    padding:48px 36px;
     position:relative;z-index:1;
   }
   .spotlight-content::after{
@@ -340,7 +342,7 @@
   .spotlight-content ul li{font-size:14.5px;color:#E2E8F0;display:flex;align-items:flex-start;gap:10px;}
   .spotlight-content ul li svg{width:18px;height:18px;flex-shrink:0;stroke:var(--cyan);margin-top:1px;}
 
-  /* product image side - enlarged & styled */
+  /* product image side - expanded */
   .spotlight-image{
     position:relative;
     overflow:hidden;
@@ -348,7 +350,7 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:20px;
+    padding:10px;
   }
 
   @media (max-width:900px){
@@ -671,27 +673,29 @@
   }
   .dhruva-slide.active{display:flex;}
   
-  /* Slide Sizing Settings */
-  .dhruva-slide.slide-pcb img{
-    width:100%;
-    max-width:880px;
-    height:auto;
-    max-height:650px;
-    object-fit:contain;
-    filter:drop-shadow(0 10px 30px rgba(0,0,0,0.5));
-  }
-  
+  /* Slide 1: Chip Image (No Border / Glow) */
   .dhruva-slide.slide-chip img{
     max-width:380px;
     max-height:380px;
     width:auto;
     height:auto;
     object-fit:contain;
-    background:#ffffff;
-    padding:20px;
-    border-radius:16px;
-    box-shadow:0 12px 36px rgba(0,0,0,0.5), 0 0 24px rgba(96,165,250,0.3);
+    background:transparent;
+    padding:0;
+    border-radius:0;
+    box-shadow:none;
     border:none;
+    filter:drop-shadow(0 15px 35px rgba(0,0,0,0.6));
+  }
+
+  /* Slide 2: PCB Board Image (Enlarged) */
+  .dhruva-slide.slide-pcb img{
+    width:100%;
+    max-width:780px;
+    height:auto;
+    max-height:550px;
+    object-fit:contain;
+    filter:drop-shadow(0 10px 30px rgba(0,0,0,0.5));
   }
 
   .dhruva-slide-dots{
@@ -838,10 +842,9 @@
         </div>
       </div>
       <div class="hero-product">
-        <!-- Swapped image to chip.png in Hero Section -->
         <img src="assets/images/chip.png" alt="DhruvaPro Chip Die">
         <div class="hero-product-tag">
-          <div class="pt-name">DhruvaPro</div>
+          <div class="pt-name">DhruvaPro · Heval</div>
           <div class="pt-sub">Chip-verified · Multi-GNSS RFIC</div>
         </div>
       </div>
@@ -1103,11 +1106,11 @@
       </div>
       <div class="spotlight-image">
         <div class="dhruva-slideshow">
-          <!-- Slide 1: Chip Die Image (First) -->
+          <!-- Slide 1: Chip Die Image -->
           <div class="dhruva-slide slide-chip active">
             <img src="assets/images/chip.png" alt="DhruvaPro Die"> 
           </div>
-          <!-- Slide 2: PCB Board Image (Second) -->
+          <!-- Slide 2: PCB Board Image (Enlarged) -->
           <div class="dhruva-slide slide-pcb">
             <img src="assets/images/pcb.png" alt="DhruvaPro EVAL Board"> 
           </div>
@@ -1243,7 +1246,7 @@
             <span>Make in India</span>
           </div>
           <div class="eco-tile">
-            <div class="eco-img-wrap"><img src="assets/images/chipin.jpg" alt="ChipIN"></div> 
+            <div class="eco-img-wrap"><img src="assets/images/chip.png" alt="ChipIN"></div> 
             <span>ChipIN</span>
           </div>
           <div class="eco-tile">
@@ -1265,7 +1268,7 @@
             <span>Make in India</span>
           </div>
           <div class="eco-tile">
-            <div class="eco-img-wrap"><img src="assets/images/chipin.jpg" alt="ChipIN"></div> 
+            <div class="eco-img-wrap"><img src="assets/images/chip.png" alt="ChipIN"></div> 
             <span>ChipIN</span>
           </div>
           <div class="eco-tile">
@@ -1287,7 +1290,7 @@
             <span>Make in India</span>
           </div>
           <div class="eco-tile">
-            <div class="eco-img-wrap"><img src="assets/images/chipin.jpg" alt="ChipIN"></div> 
+            <div class="eco-img-wrap"><img src="assets/images/chip.png" alt="ChipIN"></div> 
             <span>ChipIN</span>
           </div>
           <div class="eco-tile">
