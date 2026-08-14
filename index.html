@@ -118,7 +118,7 @@
   .hero-body{
     position:relative;z-index:1;
     display:grid;
-    grid-template-columns:1fr 1.1fr;
+    grid-template-columns:1fr 1fr;
     gap:48px;
     align-items:center;
     padding-bottom:0;
@@ -144,29 +144,35 @@
   }
   .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
 
-  /* hero product image - enlarged for better visibility */
+  /* Hero Chip Product Image Styling */
   .hero-product{
     position:relative;
     display:flex;
-    align-items:flex-end;
+    align-items:center;
     justify-content:center;
+    padding-bottom: 20px;
   }
   .hero-product img{
-    width:100%;
-    max-width:620px;
-    border-radius:16px 16px 0 0;
-    object-fit:cover;
-    filter:drop-shadow(0 -20px 60px rgba(37,99,235,0.35));
+    max-width:360px;
+    max-height:360px;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    background:#ffffff;
+    padding:24px;
+    border-radius:20px;
+    box-shadow:0 16px 40px rgba(0,0,0,0.5), 0 0 30px rgba(96,165,250,0.35);
+    border:2px solid rgba(96,165,250,0.4);
     transition:transform 0.3s ease;
   }
   .hero-product img:hover{
-    transform:scale(1.02);
+    transform:scale(1.03);
   }
   .hero-product-tag{
     position:absolute;
-    top:20px;
-    left:20px;
-    background:rgba(11,18,32,0.88);
+    top:10px;
+    left:10px;
+    background:rgba(11,18,32,0.92);
     backdrop-filter:blur(8px);
     border:1px solid rgba(96,165,250,0.3);
     border-radius:8px;
@@ -665,20 +671,19 @@
   }
   .dhruva-slide.active{display:flex;}
   
-  /* Slide 1: PCB board image (Large, clear fit) */
+  /* Slide Sizing Settings */
   .dhruva-slide.slide-pcb img{
     width:100%;
-    max-width:560px;
+    max-width:650px;
     height:auto;
-    max-height:420px;
+    max-height:480px;
     object-fit:contain;
     filter:drop-shadow(0 10px 30px rgba(0,0,0,0.5));
   }
   
-  /* Slide 2: Chip image - Framed in an elegant tech card so white bg looks deliberate & premium */
   .dhruva-slide.slide-chip img{
-    max-width:320px;
-    max-height:320px;
+    max-width:380px;
+    max-height:380px;
     width:auto;
     height:auto;
     object-fit:contain;
@@ -833,7 +838,8 @@
         </div>
       </div>
       <div class="hero-product">
-        <img src="assets/images/pcb.png" alt="DhruvaPro EVAL Board">
+        <!-- Swapped image to chip.png in Hero Section -->
+        <img src="assets/images/chip.png" alt="DhruvaPro Chip Die">
         <div class="hero-product-tag">
           <div class="pt-name">DhruvaPro · Heval</div>
           <div class="pt-sub">Chip-verified · Multi-GNSS RFIC</div>
@@ -1097,13 +1103,13 @@
       </div>
       <div class="spotlight-image">
         <div class="dhruva-slideshow">
-          <!-- Slide 1: PCB Image (Large, clear fit) -->
-          <div class="dhruva-slide slide-pcb active">
-            <img src="assets/images/pcb.png" alt="DhruvaPro EVAL Board"> 
-          </div>
-          <!-- Slide 2: Chip Die Image (Framed in a tech card) -->
-          <div class="dhruva-slide slide-chip">
+          <!-- Slide 1: Chip Die Image (First) -->
+          <div class="dhruva-slide slide-chip active">
             <img src="assets/images/chip.png" alt="DhruvaPro Die"> 
+          </div>
+          <!-- Slide 2: PCB Board Image (Second) -->
+          <div class="dhruva-slide slide-pcb">
+            <img src="assets/images/pcb.png" alt="DhruvaPro EVAL Board"> 
           </div>
           <div class="dhruva-slide-dots">
             <button class="dhruva-dot active" onclick="showSlide(0)"></button>
@@ -1237,7 +1243,7 @@
             <span>Make in India</span>
           </div>
           <div class="eco-tile">
-            <div class="eco-img-wrap"><img src="assets/images/chipin.png" alt="ChipIN"></div> 
+            <div class="eco-img-wrap"><img src="assets/images/chip.png" alt="ChipIN"></div> 
             <span>ChipIN</span>
           </div>
           <div class="eco-tile">
@@ -1259,7 +1265,7 @@
             <span>Make in India</span>
           </div>
           <div class="eco-tile">
-            <div class="eco-img-wrap"><img src="assets/images/chipin.png" alt="ChipIN"></div> 
+            <div class="eco-img-wrap"><img src="assets/images/chip.png" alt="ChipIN"></div> 
             <span>ChipIN</span>
           </div>
           <div class="eco-tile">
@@ -1281,7 +1287,7 @@
             <span>Make in India</span>
           </div>
           <div class="eco-tile">
-            <div class="eco-img-wrap"><img src="assets/images/chipin.png" alt="ChipIN"></div> 
+            <div class="eco-img-wrap"><img src="assets/images/chip.png" alt="ChipIN"></div> 
             <span>ChipIN</span>
           </div>
           <div class="eco-tile">
@@ -1325,7 +1331,6 @@
         </div>
       </div>
       <div class="insight-card">
-        <!-- Added solid white background and flex centering for bi.png -->
         <div class="insight-thumb" style="background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 16px;">
           <img src="assets/images/bi.png" alt="Bharat Innovates 2026" style="max-height: 100%; max-width: 100%; object-fit: contain;">
         </div>
