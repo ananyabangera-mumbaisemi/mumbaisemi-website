@@ -4,48 +4,139 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Analog Design Engineer — MumbaiSemi Careers</title>
-  <link rel="stylesheet" href="style.css">
   <style>
-    /* Styling for Job Details */
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #0F172A; margin: 0; background: #FFFFFF; }
-    .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
-    header { background: rgba(255,255,255,0.96); border-bottom: 1px solid rgba(0,0,0,0.08); padding: 16px 0; }
-    .logo img { height: 32px; width: auto; display: block; }
-    .btn-primary { background: #2563EB; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-primary:hover { background: #3B82F6; }
+    /* CSS Toolkit & Layout Variables */
+    :root {
+      --navy: #0B1220;
+      --deep-blue: #1E3A8A;
+      --blue: #2563EB;
+      --blue-light: #3B82F6;
+      --cyan: #60A5FA;
+      --ink: #0F172A;
+      --slate: #475569;
+      --slate-light: #64748B;
+      --bg-light: #F8FAFC;
+      --line: #E2E8F0;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font); color: var(--ink); background: #FFFFFF; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-size: 14px; font-weight: 700; padding: 10px 20px; border-radius: 8px;
+      transition: all .2s ease; cursor: pointer; border: 1px solid transparent; white-space: nowrap;
+    }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { background: var(--blue-light); }
+
+    /* ===== Header & Navigation Taskbar ===== */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 62px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo img { height: 32px; width: auto; display: block; flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a {
+      color: #334155; font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-cta { display: flex; align-items: center; gap: 12px; }
+    .menu-toggle { display: none; background: none; border: none; cursor: pointer; color: #0F172A; font-size: 24px; }
+
+    @media (max-width: 920px) {
+      .nav-links {
+        position: absolute; top: 62px; left: 0; right: 0;
+        background: #fff;
+        flex-direction: column; align-items: flex-start;
+        padding: 16px 24px 24px; gap: 16px;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        display: none;
+      }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: block; }
+    }
+
+    /* ===== Job Content Styling ===== */
     .jd-section { margin-bottom: 40px; }
-    .jd-heading { font-size: 20px; font-weight: 800; color: #0F172A; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #E2E8F0; }
-    .jd-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-    .jd-list li { font-size: 15.5px; color: #475569; line-height: 1.75; padding-left: 24px; position: relative; }
-    .jd-list li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: #2563EB; opacity: 0.6; }
-    footer { background: #0B1220; color: #9FB3D1; padding: 40px 0; margin-top: 80px; text-align: center; font-size: 14px; }
+    .jd-heading {
+      font-size: 20px; font-weight: 800; color: var(--ink);
+      margin-bottom: 16px; letter-spacing: -0.01em;
+      padding-bottom: 10px; border-bottom: 2px solid var(--line);
+    }
+    .jd-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .jd-list li {
+      font-size: 15.5px; color: var(--slate); line-height: 1.75;
+      padding-left: 24px; position: relative;
+    }
+    .jd-list li::before {
+      content: ""; position: absolute; left: 0; top: 9px;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--blue); opacity: 0.6;
+    }
+
+    /* ===== Footer ===== */
+    footer { background: var(--navy); color: #9FB3D1; padding: 40px 0; margin-top: 80px; text-align: center; font-size: 14px; }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- ===================== HEADER / NAVIGATION TASKBAR ===================== -->
   <header>
     <div class="wrap">
-      <a href="index.html" class="logo">
-        <img src="assets/images/logo.png" alt="MumbaiSemi">
-      </a>
+      <nav>
+        <a href="index.html" class="logo">
+          <!-- Update src to match your exact uploaded logo file name -->
+          <img src="assets/images/logo.png" alt="MumbaiSemi">
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#industries">Applications</a></li>
+          <li><a href="index.html#product">DhruvaPro</a></li>
+          <li><a href="index.html#team">Team</a></li>
+          <li><a href="index.html#careers">Careers</a></li>
+          <li><a href="index.html#ecosystem">Ecosystem</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="index.html#contact" class="btn btn-primary" style="padding: 9px 18px; font-size: 13px;">Contact us</a>
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <!-- Job Description Content -->
+  <!-- ===================== JOB DESCRIPTION CONTENT ===================== -->
   <main style="padding: 60px 0;">
-    <div class="wrap">
+    <div class="wrap" style="max-width: 860px;">
 
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:8px;">
-        <span style="background:#EFF6FF;color:#2563EB;font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:5px 14px;border-radius:100px;">Open Position</span>
-        <span style="font-size:13px;color:#64748B;">Full-time, In-person, Mumbai</span>
+      <a href="index.html#careers" style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--blue); margin-bottom: 32px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Back to Careers
+      </a>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 8px;">
+        <span style="background: #EFF6FF; color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px;">Open Position</span>
+        <span style="font-size: 13px; color: var(--slate-light);">Full-time, In-person, Mumbai</span>
       </div>
 
-      <h1 style="font-size:40px;font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:12px;color:#0F172A;">Analog Design Engineer</h1>
-      <p style="font-size:18px;color:#64748B;margin-bottom:40px;">MumbaiSemi, SINE — IIT Bombay Campus, Powai, Mumbai</p>
+      <h1 style="font-size: 40px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; color: var(--ink);">Analog Design Engineer</h1>
+      <p style="font-size: 18px; color: var(--slate-light); margin-bottom: 40px;">MumbaiSemi, SINE — IIT Bombay Campus, Powai, Mumbai</p>
 
-      <div style="border-left:4px solid #2563EB;padding:20px 28px;background:#F0F5FF;border-radius:0 12px 12px 0;margin-bottom:48px;">
-        <p style="font-size:16px;color:#475569;line-height:1.75;margin:0;">MumbaiSemi is a next-generation semiconductor chip design start-up spun out of the aiCAS Lab, IIT Bombay. We are hiring motivated individuals to join our team. This is a unique opportunity to gain hands-on experience with cutting-edge chip design technologies as a full-time member of our engineering team.</p>
+      <div style="border-left: 4px solid var(--blue); padding: 20px 28px; background: #F0F5FF; border-radius: 0 12px 12px 0; margin-bottom: 48px;">
+        <p style="font-size: 16px; color: var(--slate); line-height: 1.75; margin: 0;">MumbaiSemi is a next-generation semiconductor chip design start-up spun out of the aiCAS Lab, IIT Bombay. We are hiring motivated individuals to join our team. This is a unique opportunity to gain hands-on experience with cutting-edge chip design technologies as a full-time member of our engineering team.</p>
       </div>
 
       <div class="jd-section">
@@ -97,26 +188,40 @@
       </div>
 
       <!-- Application CTA Box -->
-      <div style="margin-top:48px;padding:40px;background:linear-gradient(135deg,#1E3A8A,#0B1220);border-radius:16px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <div style="margin-top: 48px; padding: 40px; background: linear-gradient(135deg, #1E3A8A, #0B1220); border-radius: 16px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
         <div>
-          <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#60A5FA;margin-bottom:8px;">Ready to apply?</p>
-          <p style="font-size:22px;font-weight:800;color:#fff;margin-bottom:6px;margin-top:0;">Analog Design Engineer</p>
-          <p style="font-size:14px;color:#9FB3D1;margin:0;">Full-time · Powai, Mumbai · SINE, IIT Bombay</p>
+          <p style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #60A5FA; margin-bottom: 8px;">Ready to apply?</p>
+          <p style="font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 6px; margin-top: 0;">Analog Design Engineer</p>
+          <p style="font-size: 14px; color: #9FB3D1; margin: 0;">Full-time · Powai, Mumbai · SINE, IIT Bombay</p>
         </div>
-        <a href="https://forms.gle/voBxzzPSryjghyCB7" target="_blank" rel="noopener" class="btn-primary">
+        <a href="https://forms.gle/voBxzzPSryjghyCB7" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 16px 36px; font-size: 15px;">
           Apply Now &rarr;
         </a>
       </div>
 
+      <p style="text-align: center; font-size: 13px; color: var(--slate-light); margin-top: 20px;">
+        Questions? Email us at <a href="mailto:support@mumbaisemi.com" style="color: var(--blue);">support@mumbaisemi.com</a>
+      </p>
+
     </div>
   </main>
 
-  <!-- Footer -->
+  <!-- ===================== FOOTER ===================== -->
   <footer>
     <div class="wrap">
-      <p style="margin:0;">&copy; 2026 MumbaiSemi. All rights reserved.</p>
+      <p style="margin: 0;">&copy; 2026 MumbaiSemi. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- Script for Mobile Menu Toggle -->
+  <script>
+    (function(){
+      var btn = document.getElementById('menuToggle');
+      var nav = document.getElementById('navLinks');
+      if(btn && nav){
+        btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
+      }
+    })();
+  </script>
 </body>
 </html>
