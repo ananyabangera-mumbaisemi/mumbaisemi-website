@@ -25,7 +25,6 @@
     ul { list-style: none; }
     .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
 
-    /* ===== Buttons ===== */
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
       font-size: 14px; font-weight: 700; padding: 10px 20px; border-radius: 8px;
@@ -34,7 +33,6 @@
     .btn-primary { background: var(--blue); color: #fff; }
     .btn-primary:hover { background: var(--blue-light); }
 
-    /* ===== Header & Navigation Taskbar ===== */
     header {
       position: sticky; top: 0; z-index: 100;
       background: rgba(255,255,255,0.96);
@@ -45,15 +43,13 @@
       display: flex; align-items: center; justify-content: space-between;
       height: 62px;
     }
-    .logo { display: flex; align-items: center; gap: 10px; }
     .logo img { height: 32px; width: auto; display: block; flex-shrink: 0; }
     .nav-links { display: flex; align-items: center; gap: 28px; }
     .nav-links a {
-      color: #334155; font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em;
+      color: #334155; font-size: 13.5px; font-weight: 600;
       transition: color .2s ease;
     }
     .nav-links a:hover { color: var(--blue); }
-    .nav-cta { display: flex; align-items: center; gap: 12px; }
     .menu-toggle { display: none; background: none; border: none; cursor: pointer; color: #0F172A; font-size: 24px; }
 
     @media (max-width: 920px) {
@@ -69,12 +65,10 @@
       .menu-toggle { display: block; }
     }
 
-    /* ===== Job Content Styling ===== */
     .jd-section { margin-bottom: 40px; }
     .jd-heading {
       font-size: 20px; font-weight: 800; color: var(--ink);
-      margin-bottom: 16px; letter-spacing: -0.01em;
-      padding-bottom: 10px; border-bottom: 2px solid var(--line);
+      margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid var(--line);
     }
     .jd-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .jd-list li {
@@ -87,13 +81,11 @@
       background: var(--blue); opacity: 0.6;
     }
 
-    /* ===== Footer ===== */
     footer { background: var(--navy); color: #9FB3D1; padding: 40px 0; margin-top: 80px; text-align: center; font-size: 14px; }
   </style>
 </head>
 <body>
 
-  <!-- ===================== HEADER / NAVIGATION TASKBAR ===================== -->
   <header>
     <div class="wrap">
       <nav>
@@ -116,7 +108,6 @@
     </div>
   </header>
 
-  <!-- ===================== JOB DESCRIPTION CONTENT ===================== -->
   <main style="padding: 60px 0;">
     <div class="wrap" style="max-width: 860px;">
 
@@ -141,9 +132,9 @@
         <h3 class="jd-heading">Program Details</h3>
         <ul class="jd-list">
           <li><strong>Duration:</strong> 6 months & 12 months options available.</li>
-          <li><strong>Stipend:</strong> Monthly competitive stipend provided.</li>
+          <li><strong>Stipend:</strong> Monthly competitive stipend.</li>
           <li><strong>Location:</strong> Powai, Mumbai (Full-time, in-person at SINE, IIT Bombay).</li>
-          <li><strong>Future Opportunity:</strong> Potential full-time offer based on internship performance.</li>
+          <li><strong>Future Opportunity:</strong> Potential full-time offer based on performance.</li>
         </ul>
       </div>
 
@@ -171,20 +162,19 @@
       <div class="jd-section">
         <h3 class="jd-heading">Eligibility</h3>
         <ul class="jd-list">
-          <li>M.Tech/M.E in Electronics.</li>
+          <li>M.Tech/M.E in Electronics or related fields.</li>
         </ul>
       </div>
 
       <div class="jd-section">
         <h3 class="jd-heading">How to Apply</h3>
         <ul class="jd-list">
-          <li>Submit your details via the application form below and upload your latest resume.</li>
+          <li>Submit your details via the application link below and upload your latest resume.</li>
           <li>Applications will be reviewed on a rolling basis until positions are filled.</li>
           <li>Shortlisted candidates will be notified via email.</li>
         </ul>
       </div>
 
-      <!-- Application CTA Box -->
       <div style="margin-top: 48px; padding: 40px; background: linear-gradient(135deg, #1E3A8A, #0B1220); border-radius: 16px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
         <div>
           <p style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #60A5FA; margin-bottom: 8px;">Ready to apply?</p>
@@ -203,7 +193,6 @@
     </div>
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer>
     <div class="wrap">
       <p style="margin: 0;">&copy; 2026 MumbaiSemi. All rights reserved.</p>
