@@ -701,13 +701,14 @@
   /* Slide 2: PCB Board Image (Significantly Enlarged) */
   .dhruva-slide.slide-pcb img{
     width: 100%;
-    max-width: 680px;   /* <--- CHANGED FROM 580px */
+    max-width: 680px;
     height: auto;
-    max-height: 580px;  /* <--- CHANGED FROM 480px */
+    max-height: 580px;
     object-fit: contain;
     margin: auto;
+    padding: 20px; /* <--- Add inner padding directly around the PCB */
     filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.6));
-    transform: scale(1.25); /* <--- CHANGED FROM 1.1 */
+    transform: scale(1.15); /* <--- Slightly reduce scale if zoom is cutting off edges */
     transform-origin: center center;
   }
 
