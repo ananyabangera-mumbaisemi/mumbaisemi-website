@@ -6,11 +6,6 @@
 <title>MumbaiSemi — Indigenous Semiconductor Chips</title>
 <meta name="description" content="MumbaiSemi is a fab-less semiconductor company designing high-performance RF, Analog, Mixed-signal, and Digital ICs for navigation, communications, AI/ML hardware, automotive, and IoT.">
 
-<!-- Hardware & Geometric Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
   :root {
     --navy: #0B1220;
@@ -26,15 +21,15 @@
     --line: #1F293D;
     --line-light: #E2E8F0;
     --white: #FFFFFF;
-    --font-heading: 'Space Grotesk', -apple-system, sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-    --font-body: 'Inter', -apple-system, sans-serif;
+    /* RESTORED: Your original font stack */
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
   }
 
+  /* SambaNova Rule: Sharp edges everywhere (0px radius) */
   * { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: var(--font-body);
+    font-family: var(--font);
     color: var(--slate-light);
     background: var(--navy);
     line-height: 1.6;
@@ -47,10 +42,10 @@
 
   .wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 
-  /* ===== Buttons ===== */
+  /* ===== Buttons (Flat & Sharp) ===== */
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    font-family: var(--font-mono); font-size: 13px; font-weight: 700;
+    font-family: var(--font); font-size: 13.5px; font-weight: 700;
     padding: 14px 28px; transition: all .15s ease; cursor: pointer;
     border: 1px solid transparent; text-transform: uppercase; letter-spacing: 0.05em;
     white-space: nowrap;
@@ -59,8 +54,6 @@
   .btn-primary:hover { background: var(--blue-light); border-color: var(--blue-light); }
   .btn-outline-dark { border: 1px solid var(--line); color: var(--white); background: transparent; }
   .btn-outline-dark:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(96,165,250,0.05); }
-  .btn-outline-light { border: 1px solid var(--ink); color: var(--ink); background: transparent; }
-  .btn-outline-light:hover { border-color: var(--blue); color: var(--blue); }
 
   /* ===== Header / Navbar ===== */
   header {
@@ -77,7 +70,7 @@
   .logo img { height: 30px; width: auto; display: block; }
   .nav-links { display: flex; align-items: center; gap: 32px; }
   .nav-links a {
-    color: var(--slate); font-family: var(--font-mono); font-size: 13px; font-weight: 500;
+    color: var(--slate); font-size: 13px; font-weight: 600;
     transition: color .2s ease; text-transform: uppercase; letter-spacing: 0.05em;
   }
   .nav-links a:hover { color: var(--cyan); }
@@ -95,7 +88,7 @@
     .menu-toggle { display: block; }
   }
 
-  /* ===== Hero ===== */
+  /* ===== Hero Section ===== */
   .hero {
     background: var(--navy);
     color: #fff;
@@ -110,13 +103,13 @@
   }
   .eyebrow {
     display: inline-flex; align-items: center; gap: 10px;
-    font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
     color: var(--cyan); text-transform: uppercase; margin-bottom: 24px;
     border: 1px solid rgba(96,165,250,0.3); padding: 6px 12px; background: rgba(96,165,250,0.05);
   }
   .hero h1 {
-    font-family: var(--font-heading); font-size: 56px; font-weight: 800; line-height: 1.05;
-    letter-spacing: -0.03em; margin-bottom: 24px; text-transform: uppercase;
+    font-size: 54px; font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.025em; margin-bottom: 24px; text-transform: uppercase;
   }
   .hero h1 span { color: var(--cyan); }
   .hero p.lead {
@@ -141,12 +134,13 @@
     padding: 8px 14px;
   }
   .hero-product-tag .pt-name {
-    font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: #fff;
+    font-size: 13px; font-weight: 700; color: #fff;
   }
   .hero-product-tag .pt-sub {
-    font-family: var(--font-mono); font-size: 10px; color: var(--cyan); text-transform: uppercase;
+    font-size: 11px; color: var(--cyan); text-transform: uppercase;
   }
 
+  /* Grid Metrics Bar (SambaNova style) */
   .hero-stats {
     display: grid; grid-template-columns: repeat(4, 1fr);
     border-top: 1px solid var(--line); margin-top: 80px;
@@ -156,9 +150,9 @@
   }
   .hero-stat:last-child { border-right: none; }
   .hero-stat .num {
-    font-family: var(--font-heading); font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 4px;
+    font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 4px;
   }
-  .hero-stat .label { font-family: var(--font-mono); font-size: 11px; color: var(--slate); text-transform: uppercase; }
+  .hero-stat .label { font-size: 12px; color: var(--slate); text-transform: uppercase; letter-spacing: 0.05em; }
 
   @media (max-width: 900px) {
     .hero h1 { font-size: 38px; }
@@ -168,18 +162,18 @@
     .hero-stat { border-bottom: 1px solid var(--line); }
   }
 
-  /* ===== Section Headers ===== */
+  /* ===== Section Headers (Left-Aligned, Non-AI) ===== */
   .section { padding: 100px 0; }
   .section-dark { background: var(--navy); color: #fff; }
   .section-light { background: #FFFFFF; color: var(--ink); }
   .section-head { max-width: 800px; margin-bottom: 64px; text-align: left; }
   .kicker {
-    font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+    font-size: 12px; font-weight: 800; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--blue); margin-bottom: 12px; display: block;
   }
   .section-dark .kicker { color: var(--cyan); }
   .section-head h2 {
-    font-family: var(--font-heading); font-size: 44px; font-weight: 800; letter-spacing: -0.02em;
+    font-size: 44px; font-weight: 800; letter-spacing: -0.02em;
     margin-bottom: 16px; line-height: 1.1; text-transform: uppercase;
   }
   .section-light .section-head h2 { color: var(--ink); }
@@ -195,7 +189,7 @@
     display: flex; flex-direction: column; justify-content: center;
   }
   .mission-card .tag {
-    font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+    font-size: 12px; font-weight: 800; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--cyan); margin-bottom: 16px; display: block;
   }
   .mission-card p { font-size: 18px; line-height: 1.6; color: var(--slate-light); }
@@ -203,7 +197,7 @@
 
   @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
 
-  /* ===== Industry / Applications Grid ===== */
+  /* ===== Industrial Application Grid ===== */
   .industry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
   .industry-card {
     background: var(--navy-card); display: flex; flex-direction: column;
@@ -215,24 +209,24 @@
     display: flex; align-items: center; justify-content: center;
   }
   .ind-card-body { padding: 28px 24px; }
-  .ind-card-body h3 { font-family: var(--font-heading); font-size: 20px; font-weight: 700; margin-bottom: 10px; color: #fff; text-transform: uppercase; }
+  .ind-card-body h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; color: #fff; text-transform: uppercase; }
   .ind-card-body p { font-size: 14px; color: var(--slate); line-height: 1.6; }
 
   @media (max-width: 980px) { .industry-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 620px) { .industry-grid { grid-template-columns: 1fr; } }
 
-  /* ===== Spotlight / DhruvaPro ===== */
+  /* ===== Spotlight / Hardware Architecture ===== */
   .spotlight {
     border: 1px solid var(--line); background: var(--navy-card);
     display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center;
   }
   .spotlight-content { padding: 64px; }
   .spotlight-badge {
-    display: inline-block; font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+    display: inline-block; font-size: 11px; font-weight: 800;
     letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan);
     border: 1px solid rgba(96,165,250,0.3); padding: 4px 10px; margin-bottom: 24px; background: rgba(96,165,250,0.05);
   }
-  .spotlight-content h3 { font-family: var(--font-heading); font-size: 42px; font-weight: 800; margin-bottom: 20px; color: #fff; text-transform: uppercase; }
+  .spotlight-content h3 { font-size: 42px; font-weight: 800; margin-bottom: 20px; color: #fff; text-transform: uppercase; }
   .spotlight-content > p { color: var(--slate); font-size: 16px; margin-bottom: 20px; }
   .spotlight-content ul { display: flex; flex-direction: column; gap: 12px; margin: 28px 0 36px; }
   .spotlight-content ul li { font-size: 14.5px; color: var(--slate-light); display: flex; align-items: center; gap: 12px; }
@@ -249,7 +243,7 @@
     .spotlight-image { border-left: none; border-top: 1px solid var(--line); min-height: 350px; }
   }
 
-  /* ===== Team ===== */
+  /* ===== Team Grid ===== */
   .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .team-card {
     background: var(--navy-card); border: 1px solid var(--line);
@@ -258,14 +252,14 @@
   .team-photo { background: #1a2f50; position: relative; min-height: 240px; }
   .team-photo img { width: 100%; height: 100%; object-fit: cover; }
   .team-info { padding: 32px; display: flex; flex-direction: column; justify-content: center; }
-  .team-info h4 { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 4px; }
-  .team-info .role { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
+  .team-info h4 { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+  .team-info .role { font-size: 12px; font-weight: 800; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
   .team-info .bio { font-size: 13.5px; color: var(--slate); margin-bottom: 20px; line-height: 1.6; }
   .team-exp { display: flex; gap: 24px; margin-bottom: 20px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 10px 0; }
-  .team-exp-item .exp-val { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: #fff; }
-  .team-exp-item .exp-label { font-family: var(--font-mono); font-size: 10px; color: var(--slate); text-transform: uppercase; }
+  .team-exp-item .exp-val { font-size: 18px; font-weight: 800; color: #fff; }
+  .team-exp-item .exp-label { font-size: 11px; color: var(--slate); text-transform: uppercase; }
   .team-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .team-tag { font-family: var(--font-mono); font-size: 10px; font-weight: 700; background: rgba(37,99,235,0.1); color: var(--cyan); border: 1px solid rgba(37,99,235,0.3); padding: 3px 8px; text-transform: uppercase; }
+  .team-tag { font-size: 11px; font-weight: 700; background: rgba(37,99,235,0.1); color: var(--cyan); border: 1px solid rgba(37,99,235,0.3); padding: 3px 8px; text-transform: uppercase; }
 
   @media (max-width: 900px) { .team-grid { grid-template-columns: 1fr; } }
   @media (max-width: 600px) { .team-card { grid-template-columns: 1fr; } }
@@ -279,18 +273,18 @@
   .job-card:hover { border-color: var(--blue); }
   .job-left { flex: 1; min-width: 280px; }
   .job-tag {
-    display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    display: inline-block; font-size: 11px; font-weight: 800;
     letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue);
     background: #EFF6FF; border: 1px solid #DBEAFE; padding: 4px 8px; margin-bottom: 12px;
   }
-  h3.job-title { font-family: var(--font-heading); font-size: 26px; font-weight: 800; color: var(--ink); margin-bottom: 8px; text-transform: uppercase; }
+  h3.job-title { font-size: 26px; font-weight: 800; color: var(--ink); margin-bottom: 8px; text-transform: uppercase; }
   .job-meta { display: flex; gap: 16px; margin-bottom: 16px; align-items: center; }
-  .job-loc, .job-type { font-family: var(--font-mono); font-size: 12px; color: #64748B; text-transform: uppercase; }
+  .job-loc, .job-type { font-size: 12px; color: #64748B; text-transform: uppercase; font-weight: 600; }
   .job-desc { font-size: 14.5px; color: #475569; margin-bottom: 20px; max-width: 600px; }
   .job-skills { display: flex; flex-wrap: wrap; gap: 6px; }
-  .job-skills span { font-family: var(--font-mono); font-size: 11px; font-weight: 500; background: var(--bg-light); color: var(--ink); padding: 4px 10px; border: 1px solid var(--line-light); }
+  .job-skills span { font-size: 11px; font-weight: 600; background: var(--bg-light); color: var(--ink); padding: 4px 10px; border: 1px solid var(--line-light); }
   .job-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
-  .job-note { font-family: var(--font-mono); font-size: 11px; color: #94A3B8; }
+  .job-note { font-size: 11px; color: #94A3B8; }
 
   /* ===== Ecosystem Marquee ===== */
   .eco-marquee-wrap {
@@ -304,17 +298,17 @@
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
   }
   .eco-tile img { max-height: 50px; max-width: 120px; object-fit: contain; filter: brightness(0.9) contrast(1.1); }
-  .eco-tile span { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--slate); text-transform: uppercase; }
+  .eco-tile span { font-size: 12px; font-weight: 700; color: var(--slate); text-transform: uppercase; }
 
-  /* ===== Insights ===== */
+  /* ===== News / Insights ===== */
   .insight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .insight-card { background: #FFFFFF; border: 1px solid var(--line-light); display: flex; flex-direction: column; }
   .insight-thumb { height: 160px; background: var(--navy); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--line-light); }
   .insight-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-  .insight-tag { font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
-  .insight-body h4 { font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 10px; line-height: 1.3; }
+  .insight-tag { font-size: 11px; font-weight: 800; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+  .insight-body h4 { font-size: 20px; font-weight: 800; color: var(--ink); margin-bottom: 10px; line-height: 1.3; }
   .insight-body p { font-size: 14px; color: #64748B; margin-bottom: 20px; flex: 1; }
-  .insight-date { font-family: var(--font-mono); font-size: 11px; color: #94A3B8; text-transform: uppercase; }
+  .insight-date { font-size: 11px; font-weight: 600; color: #94A3B8; text-transform: uppercase; }
 
   @media (max-width: 900px) { .insight-grid { grid-template-columns: 1fr; } }
 
@@ -324,16 +318,16 @@
   .contact-item { display: flex; gap: 20px; align-items: flex-start; }
   .contact-item .ic { width: 40px; height: 40px; border: 1px solid var(--blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .contact-item .ic svg { width: 18px; height: 18px; stroke: var(--blue); }
-  .contact-item h4 { font-family: var(--font-mono); font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: 4px; }
+  .contact-item h4 { font-size: 13px; font-weight: 800; text-transform: uppercase; color: var(--ink); margin-bottom: 4px; }
   .contact-item p, .contact-item a { font-size: 15px; color: #475569; }
 
   .contact-form { background: #FFFFFF; border: 1px solid var(--line-light); padding: 48px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
   .form-group { display: flex; flex-direction: column; gap: 8px; }
   .form-group.full { grid-column: 1/-1; }
-  .form-group label { font-family: var(--font-mono); font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--ink); }
+  .form-group label { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--ink); }
   .form-group input, .form-group textarea, .form-group select {
-    border: 1px solid var(--line-light); padding: 14px; font-size: 14px; font-family: var(--font-body); color: var(--ink); background: #F8FAFC;
+    border: 1px solid var(--line-light); padding: 14px; font-size: 14px; font-family: var(--font); color: var(--ink); background: #F8FAFC;
   }
   .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
     outline: none; border-color: var(--blue); background: #fff;
@@ -353,11 +347,11 @@
   .footer-social a { width: 38px; height: 38px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: #fff; }
   .footer-social a:hover { border-color: var(--cyan); color: var(--cyan); }
   .footer-social svg { width: 16px; height: 16px; }
-  .footer-col h5 { font-family: var(--font-mono); font-size: 12px; font-weight: 700; text-transform: uppercase; color: #fff; margin-bottom: 24px; letter-spacing: 0.05em; }
+  .footer-col h5 { font-size: 12px; font-weight: 800; text-transform: uppercase; color: #fff; margin-bottom: 24px; letter-spacing: 0.05em; }
   .footer-col ul { display: flex; flex-direction: column; gap: 14px; }
   .footer-col a { font-size: 14px; color: var(--slate); transition: color .2s ease; }
   .footer-col a:hover { color: #fff; }
-  .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; font-family: var(--font-mono); font-size: 11px; color: #64748B; text-transform: uppercase; flex-wrap: wrap; gap: 16px; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; font-size: 12px; color: #64748B; text-transform: uppercase; flex-wrap: wrap; gap: 16px; }
 
   @media (max-width: 900px) {
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -452,7 +446,7 @@
     <div class="about-grid">
       <div class="about-text">
         <span class="kicker">Company Profile</span>
-        <h2 style="font-family:var(--font-heading);font-size:44px;font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:24px;text-transform:uppercase;color:var(--ink);">About Us</h2>
+        <h2 style="font-size:44px;font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:24px;text-transform:uppercase;color:var(--ink);">About Us</h2>
         <p>MumbaiSemi is a fab-less semiconductor company designing high-performance RF, Analog, Mixed-signal, and Digital ICs for advanced communications, AI/ML hardware, autonomous vehicles, low-power IoT, and more.</p>
         <p>Our core strength lies in developing innovative circuits to address the toughest challenges in chip design, from RF front-ends operating at extreme temperatures to high-speed PHYs built for next-generation data centers.</p>
         <p>We research and innovate to produce disruptive solutions for futuristic challenges, developing high-quality semiconductor chips in India for both national and global needs.</p>
@@ -833,7 +827,7 @@
           </div>
         </div>
         <div class="contact-item">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.554v-5.57c0-1.328-.025-3.037-1.85-3.037-1.852 0-2.136 1.445-2.136 2.94v5.667H9.353V9h3.414v1.561h.048c.476-.9 1.637-1.85 3.37-1.85 3.602 0 4.267 2.37 4.267 5.455v6.284zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.554v-5.57c0-1.328-.025-3.037-1.85-3.037-1.852 0-2.136 1.445-2.136 2.94v5.667H9.353V9h3.414v1.561h.048c.476-.9 1.637-1.85 3.37-1.85 3.602 0 4.267 2.37 4.267 5.455v6.284zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
           <div>
             <h4>LinkedIn</h4>
             <a href="https://www.linkedin.com/company/mumbaisemi" target="_blank" rel="noopener">linkedin.com/company/mumbaisemi</a>
@@ -893,7 +887,7 @@
         <p>A fab-less semiconductor company designing high-performance RF, Analog, Mixed-signal, and Digital ICs, built in India, for the world.</p>
         <div class="footer-social">
           <a href="https://www.linkedin.com/company/mumbaisemi" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.554v-5.57c0-1.328-.025-3.037-1.85-3.037-1.852 0-2.136 1.445-2.136 2.94v5.667H9.353V9h3.414v1.561h.048c.476-.9 1.637-1.85 3.37-1.85 3.602 0 4.267 2.37 4.267 5.455v6.284zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.554v-5.57c0-1.328-.025-3.037-1.85-3.037-1.852 0-2.136 1.445-2.136 2.94v5.667H9.353V9h3.414v1.561h.048c.476-.9 1.637-1.85 3.37-1.85 3.602 0 4.267 2.37 4.267 5.455v6.284zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           </a>
           <a href="https://x.com/MumbaiSemi" target="_blank" rel="noopener" aria-label="X / Twitter">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 1.5h3.3l-7.2 8.2 8.5 11.3h-6.6l-5.2-6.8-6 6.8h-3.3l7.7-8.8-8.2-10.7h6.8l4.7 6.2 5.5-6.2z"/></svg>
